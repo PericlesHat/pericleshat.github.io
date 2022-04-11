@@ -30,10 +30,10 @@
     <!-- Custom CSS --> 
     
         
-<link rel="stylesheet" href="/css/dusign-dark.css">
+<link rel="stylesheet" href="/css/dusign-light.css">
 
         
-<link rel="stylesheet" href="/css/dusign-common-dark.css">
+<link rel="stylesheet" href="/css/dusign-common-light.css">
 
         
 <link rel="stylesheet" href="/css/font-awesome.css">
@@ -41,6 +41,7 @@
         
 <link rel="stylesheet" href="/css/toc.css">
 
+        <!-- background effects end -->
     
     
     <!-- Pygments Highlight CSS -->
@@ -89,7 +90,7 @@
     header.intro-header{
         
             
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('/img/header_img/mMXgAajaTNw.jpg')
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/img/header_img/mMXgAajaTNw.jpg')
                 /*page*/
             
         
@@ -118,8 +119,8 @@
 
     
     <div class="waveWrapper">
-        <div class="wave wave_before" style="background-image: url('/img/wave-dark.png')"></div>
-        <div class="wave wave_after" style="background-image: url('/img/wave-dark.png')"></div>
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
     </div>
     
 </header>
@@ -231,9 +232,17 @@
             <!-- 标签云 -->
             <div id='tag_clouds' class="tags">
                 
-                    <a href="#Life" title="Life" rel="2">Life</a>
+                    <a href="#Life" title="Life" rel="3">Life</a>
                 
                     <a href="#Experience" title="Experience" rel="2">Experience</a>
+                
+                    <a href="#Deep Learning" title="Deep Learning" rel="1">Deep Learning</a>
+                
+                    <a href="#Computer Vision" title="Computer Vision" rel="1">Computer Vision</a>
+                
+                    <a href="#Development" title="Development" rel="1">Development</a>
+                
+                    <a href="#Flutter" title="Flutter" rel="1">Flutter</a>
                 
             </div>
 
@@ -279,6 +288,21 @@
                 </div>
                 <hr>
                 
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2021/12/18/8/">
+                        <h2 class="post-title">
+                            人生没有准备好
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
             </div>
             
             <div class="one-tag-list">
@@ -309,6 +333,94 @@
                      <a href="/2021/07/20/6/">
                         <h2 class="post-title">
                             Matlab(Win10)下载安装Psychtoolbox教程
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Deep Learning">
+                    <span class="tag-text">Deep Learning</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2021/11/27/7/">
+                        <h2 class="post-title">
+                            【AL文档】深度学习与计算机视觉
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Computer Vision">
+                    <span class="tag-text">Computer Vision</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2021/11/27/7/">
+                        <h2 class="post-title">
+                            【AL文档】深度学习与计算机视觉
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Development">
+                    <span class="tag-text">Development</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2022/01/21/9/">
+                        <h2 class="post-title">
+                            Flutter开发日记#1：上手第一个app
+                        </h2>
+                        
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </div>
+                <hr>
+                
+            </div>
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="Flutter">
+                    <span class="tag-text">Flutter</span>
+                </span>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <div class="post-preview">
+                     <a href="/2022/01/21/9/">
+                        <h2 class="post-title">
+                            Flutter开发日记#1：上手第一个app
                         </h2>
                         
                     </a>
@@ -482,21 +594,6 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

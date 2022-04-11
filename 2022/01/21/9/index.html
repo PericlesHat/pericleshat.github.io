@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Welcome">
+    <meta name="keyword"  content="keyon">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          Flutter开发日记#1：上手第一个app - Keyon&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://dusign.net/2022/01/21/9/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/thomas1.png')
+                /*post*/
+            
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Development" title="Development">Development</a>
+                            
+                              <a class="tag" href="/tags/#Flutter" title="Flutter">Flutter</a>
+                            
+                        </div>
+                        <h1>Flutter开发日记#1：上手第一个app</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Keyon Cheung on
+                            2022-01-21
+                        </span>
+
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Keyon Cheung</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row" style="margin: 1em 0">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="笔者的话"><a href="#笔者的话" class="headerlink" title="笔者的话"></a>笔者的话</h2><p>开发一个移动应用对我来说一直是一件直观而有成就感的事。相比桌面级应用，移动客户端的开发更能体现最前沿的交互&amp;平面设计。作为前端的初学者，我在几个月前才学习了 H5、CSS 和 JS，并接触了 <code>Vue.js</code>和<code>uni-app</code>框架，完成了一个简单的微信小程序框架搭建（也就是 AL 的小程序）。</p>
+<p>紧接着，我就看到了腾讯微信移动客户端的实习招聘，其中就有着<code>Flutter</code>的要求。为此，我计划利用寒假时间做一个自己的移动应用小项目，特此以本系列博客记录。</p>
+<h2 id="Flutter简介"><a href="#Flutter简介" class="headerlink" title="Flutter简介"></a>Flutter简介</h2><blockquote>
+<p>Flutter 是谷歌的移动 UI 框架，可以快速在 iOS 和 Android 上构建高质量的原生用户界面。 Flutter 可以与现有的代码一起工作。在全世界， Flutter 正在被越来越多的开发者和组织使用，并且 Flutter 是完全免费、开源的。</p>
+</blockquote>
+<p>Flutter 的特点是快速开发，支持 Hot Reload（热重载），使用自身的高性能渲染引擎来绘制 Widget（组件，也是 Flutter 的核心概念）。同时，Flutter采用<code>Dart</code>语言开发，这种语言同时支持 JIT（Just-in-time）和 AOT（Ahead-of-time），同时是类型安全的。</p>
+<p><img src="https://book.flutterchina.club/assets/img/1-1.82c25693.png" alt=""></p>
+<p>Flutter 从上到下可以分为三层：<strong>框架层、引擎层和嵌入层</strong>。</p>
+<ul>
+<li>框架层部分是一个纯 Dart 实现的 SDK，它实现了一套基础库，包括<code>dart:ui</code>包、渲染树和 Material 和 Cupertino 两种视觉风格的组件库，它们分别实现了 Material 和 iOS 设计规范。</li>
+<li>引擎层毫无疑问是 Flutter 的核心， 该层主要是 C++ 实现，其中包括了 Skia 引擎、Dart 运行时、文字排版引擎等。在代码调用<code>dart:ui</code>库时，调用最终会走到引擎层，然后实现真正的绘制和显示。</li>
+<li>嵌入层主要是将 Flutter 引擎 ”安装“ 到特定平台上，采用了当前平台的语言编写，例如 Android 使用的是 Java 和 C++， iOS 和 macOS 使用的是 Objective-C 和 Objective-C++，Windows 和 Linux 使用的是 C++。 </li>
+</ul>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>笔者寒假使用的开发环境是在 macOS 上，因此自然使用的是 Xcode 作为 iOS 的开发工具，使用系统自带的 Simulator 来运行 iPhone 虚拟机。<strong>但是 Xcode 并不能作为 Flutter 开发的 IDE，因此需要使用 VSCode 及其相关插件。</strong></p>
+<p>在 macOS 上，通过以下命令来找到模拟器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a Simulator</span><br></pre></td></tr></table></figure>
+<p>在 VSCode 中直接 debug 运行 <code>main.dart</code> 即可。</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/01/0e53506ddb1d4f85.png" alt=""></p>
+<h2 id="Get-Started-——-上手第一个-Flutter-应用"><a href="#Get-Started-——-上手第一个-Flutter-应用" class="headerlink" title="Get Started —— 上手第一个 Flutter 应用"></a>Get Started —— 上手第一个 Flutter 应用</h2><p>准备冻手！我们将跟随 <a href="https://flutterchina.club/get-started/codelab/" target="_blank" rel="noopener">Flutter 官方文档</a> 来上手编写第一个 Flutter 应用。</p>
+<p>首先需要注意，我们编写的代码主要都在<code>lib/main.dart</code>这里。</p>
+<p>我们直接删除掉 Flutter 提供的 Dart 模板，替换成文档中的 Hello World 示例代码。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() =&gt; runApp(<span class="keyword">new</span> MyApp());</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</span><br><span class="line">      title: <span class="string">'Welcome to Flutter'</span>,</span><br><span class="line">      home: <span class="keyword">new</span> Scaffold(</span><br><span class="line">        appBar: <span class="keyword">new</span> AppBar(</span><br><span class="line">          title: <span class="keyword">new</span> Text(<span class="string">'Welcome to Flutter'</span>),</span><br><span class="line">        ),</span><br><span class="line">        body: <span class="keyword">new</span> Center(</span><br><span class="line">          child: <span class="keyword">new</span> Text(<span class="string">'Hello World'</span>),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个最简单的示例代码包括了几个重要部分。首先是导入，我们创建的是一个 Material APP，因此使用的是来自 Flutter 的 Material Widget。<code>main</code>函数使用<code>runApp()</code>来运行下面的类。符号<code>=&gt;</code>是 Dart 中单行函数的简写，当然也可以用大括号。</p>
+<p>该应用程序继承了 StatelessWidget，这将会使应用本身也成为一个 Widget（这是 Flutter 中的主要对象，它比“控件”的概念更广泛，不仅可以表示 UI 元素，也可以表示一些功能性的组件）。<strong>Flutter 中万物皆 Widget，我们通常会通过继承 StatelessWidget 或 StatefulWidget 来实现。</strong></p>
+<p>Scanffold 是 Material library 中提供的一个 Widget，提供了默认的导航栏、标题和包含主屏幕 Widget 树的 body 属性。</p>
+<p>通过 override（重写）<code>build</code>方法来描述如何显示应用程序的。</p>
+<p>此时的应用 be like：</p>
+<p><img src="https://flutterchina.club/get-started/codelab/images/hello-world-screenshot.png" style="zoom:50%;" /></p>
+<p>使用外部包（package），我们需要在<code>pubspec.yaml</code>中添加依赖，如以下的<code>english_words</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">flutter:</span></span><br><span class="line">    <span class="attr">sdk:</span> <span class="string">flutter</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">cupertino_icons:</span> <span class="string">^0.1.0</span></span><br><span class="line">  <span class="attr">english_words:</span> <span class="string">^3.1.0</span></span><br></pre></td></tr></table></figure>
+<p>此时你的 IDE 会自动将这个包装到你的项目中，我们只需要在 <code>lib/main.dart</code>中导入即可。</p>
+<p><strong>接下来我们关注一下 State（状态）。</strong>响应式的编程框架中都会有一个永恒的主题——状态管理，无论是在 React/Vue（两者都是支持响应式编程的 Web 开发框架），还是 Flutter 中，他们讨论的问题和解决的思想都是一致的。</p>
+<p>我们想一个问题，StatefulWidget 的状态应该被谁管理？Widget 本身？父 Widget ？都会？还是另一个对象？答案是取决于实际情况！以下是管理状态的最常见的方法：</p>
+<ul>
+<li>Widget 管理自己的状态</li>
+<li>Widget 管理子 Widget 状态</li>
+<li>混合管理（父 Widget 和子 Widget 都管理状态）</li>
+</ul>
+<p>如果状态是用户数据，如复选框的选中状态、滑块的位置，则该状态最好由父 Widget 管理；如果状态是有关界面外观效果的，例如颜色、动画，那么状态最好由 Widget 本身来管理；如果某一个状态是不同 Widget 共享的则最好由它们共同的父 Widget 管理。</p>
+<p>StatelessWidget 是不可变的，这意味着它们的属性不能改变，所有的值都是最终的。</p>
+<p>StatefulWidget 持有的状态可能在 Widget 生命周期中发生变化。实现一个 StatefulWidget 至少需要两个类:</p>
+<ol>
+<li>一个 StatefulWidget 类</li>
+<li>一个 State 类</li>
+</ol>
+<p>使用以下类来实现一个可交互可收藏的滚动单词列表（篇幅原因，完整代码请访问本节开头链接）：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWords</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  createState() =&gt; RandomWordsState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomWordsState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">RandomWords</span>&gt; </span>&#123;</span><br><span class="line">  <span class="comment">// some variables</span></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold (</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'Startup Name Generator'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: _buildSuggestions(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget _buildSuggestions() &#123;</span><br><span class="line">    <span class="keyword">return</span> ListView.builder(</span><br><span class="line">        <span class="keyword">return</span> _buildRow(_suggestions[index]);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget _buildRow(WordPair pair) &#123;</span><br><span class="line">    <span class="comment">// some variables</span></span><br><span class="line">    <span class="keyword">return</span> ListTile(</span><br><span class="line">      trailing: Icon(</span><br><span class="line">        alreadySaved ? Icons.favorite : Icons.favorite_border,</span><br><span class="line">        color: alreadySaved ? Colors.red : <span class="keyword">null</span>,</span><br><span class="line">      ),</span><br><span class="line">      onTap: () &#123;</span><br><span class="line">        setState(() &#123;</span><br><span class="line">          <span class="keyword">if</span> (alreadySaved) &#123;</span><br><span class="line">            _saved.remove(pair);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            _saved.add(pair);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://flutterchina.club/get-started/codelab/images/step5-screenshot.png" style="zoom:50%;" /></p>
+<p>如果需要建立一个可导航的收藏夹，使用 Route（路由）。实现的原理是一个路由栈，可以完成 push 和 pop 操作。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> _pushSaved() &#123;</span><br><span class="line">  Navigator.of(context).push(</span><br><span class="line">      <span class="comment">// blablabla your code</span></span><br><span class="line">      <span class="comment">// remember to return a new Scaffold</span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果需要更改主题 UI，可以很轻松的设置<code>theme</code>属性来完成：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">      theme: <span class="keyword">new</span> ThemeData(</span><br><span class="line">        primaryColor: Colors.white,</span><br><span class="line">      ),</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://flutterchina.club/get-started/codelab/images/step7-themes.png" style="zoom:50%;" /></p>
+<p>跟着文档，我们一步步复现了第一个简单应用的实现。接下来，我们就要进入真正的移动应用开发了。最近发现油管上有大量 Flutter 的保姆级教程（这点 Bilibili 没法比），丰富程度和质量都令人咋舌，准备选一个好看实用的作为开发模板来完成我的项目，实战永远是学习最快的方法。冲冲冲！</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://flutterchina.club/get-started/codelab/" target="_blank" rel="noopener">https://flutterchina.club/get-started/codelab/</a></p>
+<p><a href="https://book.flutterchina.club/chapter1/flutter_intro.html" target="_blank" rel="noopener">https://book.flutterchina.club/chapter1/flutter_intro.html</a></p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/12/18/8/" data-toggle="tooltip" data-placement="top" title="人生没有准备好">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        Copyright © Keyon Cheung 2021
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#笔者的话"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">笔者的话</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Flutter简介"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Flutter简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开发环境"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">开发环境</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Get-Started-——-上手第一个-Flutter-应用"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Get Started —— 上手第一个 Flutter 应用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#参考"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">参考</span></a></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Development" title="Development">Development</a>
+                        
+                          <a class="tag" href="/tags/#Flutter" title="Flutter">Flutter</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Keyon Cheung 2022 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://dusign.net/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+</body>
+
+</html>
