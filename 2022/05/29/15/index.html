@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          C++复习笔记#1：static与类型转换 - Keyon&#39;s Blog
+          华为数通软件开发实习技术面 - Keyon&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://dusign.net/2022/05/17/14/">
+    <link rel="canonical" href="https://dusign.net/2022/05/29/15/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -90,7 +90,7 @@
     header.intro-header{
         
             
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/nld.jpg')
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/tj.jpg')
                 /*post*/
             
         
@@ -108,16 +108,18 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Development" title="Development">Development</a>
+                              <a class="tag" href="/tags/#Life" title="Life">Life</a>
+                            
+                              <a class="tag" href="/tags/#Experience" title="Experience">Experience</a>
                             
                               <a class="tag" href="/tags/#C++" title="C++">C++</a>
                             
                         </div>
-                        <h1>C++复习笔记#1：static与类型转换</h1>
+                        <h1>华为数通软件开发实习技术面</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by Keyon Cheung on
-                            2022-05-17
+                            2022-05-29
                         </span>
 
                         
@@ -249,70 +251,135 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>本篇为 C++ 相关知识的复习笔记第一篇。</p>
-<hr>
-<h2 id="static-关键字"><a href="#static-关键字" class="headerlink" title="static 关键字"></a>static 关键字</h2><p>static 是 C/C++ 中很常用的修饰符，它被用来控制变量的存储方式和可见性。</p>
-<p>在函数内部定义的变量的内存空间是编译器为它在栈上分配的，而函数执行结束时会释放掉。如果想将函数中此变量的值保存至下一次调用时，可以将其定义为全局的变量，但定义一个全局变量有许多缺点，例如破坏了此变量的访问范围。static 关键字则可以很好的解决这个问题。</p>
-<h3 id="全局-static-变量"><a href="#全局-static-变量" class="headerlink" title="全局 static 变量"></a>全局 static 变量</h3><p><strong>存储位置</strong>：静态存储区，在程序运行期间一直存在</p>
-<p><strong>初始化</strong>： 未手动初始化的变量自动初始化为 0</p>
-<p><strong>作用域</strong>： 从定义之处开始，到文件结束，仅能在本文件中使用</p>
-<h3 id="局部-static-变量"><a href="#局部-static-变量" class="headerlink" title="局部 static 变量"></a>局部 static 变量</h3><p><strong>存储位置</strong>：静态存储区，在程序运行期间一直存在</p>
-<p><strong>初始化</strong>： 未手动初始化的变量自动初始化为 0</p>
-<p><strong>作用域</strong>： 为局部作用域， 当函数或语句块结束，静态变量仍然存在于内存区，再次调用函数或进入语句块时，可以再次被访问，且值保持不变</p>
-<h3 id="static-函数"><a href="#static-函数" class="headerlink" title="static 函数"></a>static 函数</h3><p>静态函数只在声明他的文件内可见，无法被其他文件使用，若想在其他文件服用复用函数，最好把它写在头文件中，否则一般加 static 关键字。</p>
-<h3 id="类的-static-成员变量-amp-static-成员函数"><a href="#类的-static-成员变量-amp-static-成员函数" class="headerlink" title="类的 static 成员变量 &amp; static 成员函数"></a>类的 static 成员变量 &amp; static 成员函数</h3><p>类的静态成员不属于任何一个类，可以在对象间共享，对于多个对象来说， 静态成员存储于一处，供所有对象访问，对静态函数/静态成员的访问不需要使用对象名。</p>
-<p>类的<strong>静态函数</strong>不能直接引用类的非静态成员，也不能调用非静态成员函数。</p>
-<h3 id="static-的作用"><a href="#static-的作用" class="headerlink" title="static 的作用"></a>static 的作用</h3><ol>
-<li><p><strong>隐藏</strong>，当 static 修饰变量的时候，能够将变量或函数对本文件外的文件进行隐藏，无法在其他文件中访问（即便是 extern 外部声明也不可以）。</p>
+                <p>前几天面试了华为数通部门的通用软件开发实习生，总结了面试经验，若侵权请联系删除。</p>
+<ol>
+<li><p><strong>面试官首先介绍了面试流程：</strong></p>
+<ul>
+<li>第一部分是自我介绍和项目介绍</li>
+<li>第二部分是计算机基础考察</li>
+<li>第三部分是笔试复盘 + 手撕一道题</li>
+</ul>
 </li>
-<li><p><strong>初始化</strong>，静态存储区分为 <code>DATA</code> 段和 <code>BSS</code> 段，<code>DATA</code> 段存放已经初始化了的全局变量，<code>BSS</code> 段存放未初始化的全局变量和静态变量，在程序执行前，<code>BSS</code> 段会被清零，从而所有静态变量都被初始化为 0。</p>
+<li><p><strong>介绍项目（我用了大概20分钟，面试官问了一些细节和问题）</strong></p>
+<blockquote>
+<p>面试官：你觉得你的项目的难点是什么？你怎么看待现在很火的人工智能和深度学习？（我的项目之一是深度学习相关的）你提到了 Github，你的模型和 Github 上面那些随手可以找到的有什么区别？</p>
+</blockquote>
 </li>
-<li><p><strong>延长变量的生命周期</strong>，若想延长一个变量的生命周期，可以把它声明为 static，直到程序运行结束以后才释放</p>
+<li><p><strong>C 和 C++ 的区别？</strong></p>
+<blockquote>
+<p>我：C++ 是 C 的超集，它相比 C 封装多了非常多的东西，比如 STL 和相关容器，比如保证安全的智能指针和类型转换方法，比如一些集成好的算法像 <code>sort()</code> 。C++ 是面向对象的，有封装继承多态三大特性。（答的比较乱）</p>
+</blockquote>
+<ul>
+<li>C++ 是 C 的超集，C 是面向过程的结构化编程语言，C++ 是面向对象的语言。C++ 可以使用引用，C 仅支持指针操作。C++ 面向对象有三种特性，继承封装多态，也对c进行了许多类型安全的封装，比如强制类型转换这些。但是 C++ 的高级特性大都是建立在降低效率的基础上实现的，C 能够以最简便的方式编译，处理低级存储器，因此更适用于偏底层的设计，像嵌入式，单片机这些。</li>
+</ul>
+</li>
+<li><p><strong>你提到了智能指针，你能讲讲 shared_ptr 和 unique_ptr 吗？是如何实现的？</strong></p>
+<blockquote>
+<p>我：shared_ptr 是共享指针，我没有读过源码，但是我知道里面有个计数器会随着指向内存 +1，释放内存 -1。（unique_ptr 答错了，答到了 weak_ptr 的概念上）</p>
+</blockquote>
+<ul>
+<li><p><strong>shared_ptr</strong> ：shared_ptr 是一种共享式指针，它引入了一个引用计数的概念，对于一块内存，每增加一个 shared_ptr 指向，其引用计数+1，每有一个 shared_ptr 释放对内存的使用权，即销毁指针或指向其他内存，则引用计数-1，当引用计数为0时，则自动释放其之前指向的内存。</p>
+<ul>
+<li><strong>unique_ptr</strong>： 为了保证同一时间仅能有一个指针来管理一块内存，C++11 引入了unique_ptr，它是一种独占式指针，仅支持一个指针指向该内存。可以使用 <code>std::move</code> 来移动 unique_ptr 指向的内存。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>你了解 std::move 吗？了解模板吗？lambda呢？（还问了几个名词，不懂）</strong></p>
+<blockquote>
+<p>我：我只知道好像 <code>std::move</code> 是和右值引用相关的…</p>
+<p>面试官：那是用来做什么的呢？</p>
+<p>我：不太清楚</p>
+<p>面试官：这样，你平常有自己学习 C++ 吗？</p>
+<p>我：课堂上的 C++ 没有讲的很深，我自己有读  C++ Primer，还没读完</p>
+<p>面试官：你平时做项目会用 C++ 吗，看你的项目好像是前端和 Python</p>
+<p>我：只有刷题用…</p>
+</blockquote>
+<ul>
+<li><code>std::move</code> 的本质就强制类型转换，它<strong>无条件地将实参转为右值引用类型</strong></li>
+<li><code>std::move</code> 是将对象的状态或者所有权从一个对象转移到另一个对象，只是转移，没有内存的搬迁或者内存拷贝。</li>
+</ul>
+</li>
+<li><p><strong>C++ 的一大特性是面向对象，如果让你在 C 中实现面向对象，你会怎么做？</strong></p>
+<blockquote>
+<p>我：没有了解过… 关于封装，可能是将一个 struct 单独写在一个 <code>.c</code> 文件中，然后让别的文件去引用？</p>
+<p>面试官：差不太多，写在一个文件中可以向其他文件隐藏其中函数的实现细节，仅提供调用的接口。那继承和多态呢？</p>
+<p>我：继承是另外再写一个 <code>.c</code> 文件的结构体，引用基类的结构体吗？然后实现虚函数指针 <code>vptr</code> 并维护虚函数表来实现多态？</p>
+<p>面试官：差不多，无非就是维护一些指向父类函数的指针。</p>
+</blockquote>
+<ul>
+<li><p>封装：将客观事物抽象为逻辑实体，实体的属性和功能相结合，形成一个有机的整体。并对实体的属性和功能实现进行访问控制，向信任的实体开放，对不信任的实体隐藏。通过开放的外部接口即可访问，无需知道功能如何实现。</p>
+<ul>
+<li>可隐藏实体实现的细节。</li>
+<li>提高安全性，设定访问控制，只允许具有特定权限的使用者调用。</li>
+<li>简化编程，调用方无需知道功能是怎么实现的，即可调用。</li>
+</ul>
+<p>在 <code>.c</code> 文件中封装 struct 结构体，这样可以向其他文件隐藏函数的实现细节，仅仅提供函数调用接口。</p>
+</li>
+<li><p>继承和多态：继承指形成有层级的类，使得低层级的类可以延用高层级类的特征和方法。多态指一个类的同名方法，在不同情况下的实现细节不同。实现函数指针或虚函数指针，维护虚函数表或指向父类的指针。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>讲讲 STL 容器吧。你知道哪些容器？vector 和 list 的区别是什么？</strong></p>
+<blockquote>
+<p>我：（如下）</p>
+</blockquote>
+<ul>
+<li>vector 底层是数组，会开辟一段连续的内存空间，数组的特点是随机访问时间复杂度为 O(1)，但是增删改的复杂度需要移动大面积的内存，复杂度为 O(n)</li>
+<li>list 底层为链表，开辟的内存空间不连续，因此访问数据能力为 O(n)，但是增删改操作本身时间复杂度低</li>
+</ul>
+</li>
+<li><p><strong>你知道 map 和 unordered_map 的区别吗？什么时候用 map？</strong></p>
+<blockquote>
+<p>我：map 和 set 底层都是红黑树，这是一种二叉查找树，索引起来效率较慢。unordered_map 和 unordered_set 底层则是哈希，访问时间为 O(1)，效率高</p>
+<p>面试官：那什么时候用 map？</p>
+<p>我：不懂，没用过</p>
+</blockquote>
+<ul>
+<li><p>map：内部实现了一个红黑树，该结构具有自动排序的功能，因此map内部的所有元素都是有序的，红黑树的每一个节点都代表着 map 的一个元素，因此，对于map进行的查找，删除，添加等一系列的操作都相当于是对红黑树进行这样的操作，故红黑树的效率决定了 map 的效率。</p>
+</li>
+<li><p>unordered_map: 内部实现了一个哈希表，因此其元素的排列顺序是杂乱的，无序的</p>
+</li>
+<li><p>|        | map                                                          | unordered_map                                |<br>| :——- | :—————————————————————————————- | :—————————————————————- |<br>| 优点   | 有序性，其元素的有序性在很多应用中都会简化很多的操作红黑树，内部实现一个红黑树使得 map 的很多操作在低时间复杂度下就可以实现，因此效率非常的高 | 因为内部实现了哈希表，因此其查找速度非常的快 |<br>| 缺点   | 空间占用率高，因为 map 内部实现了红黑树，虽然提高了运行效率，但是因为每一个节点都需要额外保存父节点，孩子节点以及红/黑性质，使得每一个节点都占用大量的空间 | 哈希表的建立比较耗费时间                     |<br>| 适用处 | 有顺序要求的问题，用 map 会更高效一些                        | 对于查找问题， unordered_map 会更加高效一些  |</p>
+</li>
+</ul>
+</li>
+<li><p><strong>你提到了哈希，简单介绍下哈希和实现哈希的相关问题吧。</strong></p>
+<blockquote>
+<p>我：哈希表通过设计散列函数来实现地址映射，查询效率非常高。有可能出现哈希冲突，就是数据经过散列函数得到了相同的 index。解决的方法有二次探测再散列、拉链法等等。</p>
+</blockquote>
+<ul>
+<li>散列表（Hash table，也叫哈希表），是根据键（Key）而直接访问在内存储存位置的数据结构。也就是说，它通过计算出一个键值的函数，将所需查询的数据映射到表中一个位置来让人访问，这加快了查找速度。这个映射函数称做散列函数，存放记录的数组称做散列表。</li>
+</ul>
+</li>
+<li><p><strong>你知道 upper_bound 吗，C++ 是如何去找那个边界的？</strong></p>
+<blockquote>
+<p>我：没听过</p>
+</blockquote>
+</li>
+<li><p><strong>我们来看看你的笔试吧。（让我复盘了我做出来的第一题）</strong></p>
+</li>
+<li><p><strong>好，来做道题：<a href="https://leetcode.cn/problems/group-anagrams/" target="_blank" rel="noopener">leetcode49</a></strong></p>
+<blockquote>
+<p>面试官需要共享屏幕并计时 30min。这道题其实不难，但是因为太简单了我就想着先做出来再说，就暴力了一个比较蠢的哈希遍历方法，时间复杂度 O(n <em> n </em> m)。面试官问我有没有更好的方法，我就说对每个字符串内部排序，然后比较字符串即可，复杂度为 O(n * mlogm)，面试官认可了。</p>
+</blockquote>
+</li>
+<li><p><strong>反问：你们的技术栈是什么？</strong></p>
+<blockquote>
+<p> 面试官：C 和 C++，有时候也会用 Lua 来编写 GUI 和 shell。</p>
+</blockquote>
 </li>
 </ol>
-<hr>
-<h2 id="四种强制类型转换"><a href="#四种强制类型转换" class="headerlink" title="四种强制类型转换"></a>四种强制类型转换</h2><p>C++不是类型安全的。C++的四种强制类型转换，分别为：<code>static_cast</code> , <code>dynamic_cast</code> , <code>const_cast</code> , <code>reinterpret_cast</code>。新类型的强制转换可以提供更好的控制强制转换过程，允许控制各种不同种类的强制转换。</p>
-<h3 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h3><p>在下面这些情况下，编译器会自动地转换运算对象的类型：</p>
-<ul>
-<li>比 int 类型小的整型值首先提升为较大的整数类型</li>
-<li>在条件中，非布尔值转换为布尔类型</li>
-<li>初始化过程中，初始值转换成变量的类型</li>
-<li>在赋值语句中，右侧运算对象转换成左侧运算对象的类型</li>
-<li>如果算术运算或关系运算的运算对象有多种类型，需要转换成同一种类型</li>
-<li>数组和指针的转换</li>
-<li>指针之间的转换</li>
-<li>转换成布尔类型</li>
-<li>转换成常量（如函数参数中的 const）</li>
-<li>类类型转换</li>
-</ul>
-<h3 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h3><h4 id="static-cast"><a href="#static-cast" class="headerlink" title="static_cast"></a>static_cast</h4><p>用法：static_cast &lt; type-id &gt; ( expression )</p>
-<p>该运算符把 expression 转换为 type-id 类型，但没有运行时类型检查来保证转换的安全性。可以用于任何有明确定义的类型转换，只要<strong>不包含底层 const</strong>， 都可以使用 <code>static_cast</code>。</p>
-<h4 id="dynamic-cast"><a href="#dynamic-cast" class="headerlink" title="dynamic_cast"></a>dynamic_cast</h4><p>用法：dynamic_cast &lt; type-id &gt; ( expression )</p>
-<p>该运算符把 expression 转换成 type-id 类型的对象。type-id 必须是类的指针、类的引用或者void *。如果 type-id 是类指针类型，那么 expression 也必须是一个指针；如果 type-id 是一个引用，那么 expression 也必须是一个引用。</p>
-<p>这是一种动态类型转换，一般用于含有<strong>虚函数</strong>的类，用于类层次间的向下或向上转化，只能转化指针或者引用。为什么需要 <code>dynamic_cast</code> 强制转换？简单的说，当无法使用虚函数的时候。</p>
-<p>其他三种转换都是编译时完成的，<code>dynamic_cast</code> 是运行时处理的，<strong>运行时要进行类型检查（下行转换）</strong>。使用 <code>dynamic_cast</code> 进行转换的，基类中一定要有虚函数，否则编译不通过。</p>
-<p>需要检测有虚函数的原因：类中存在虚函数，就说明它有想要让基类指针或引用指向派生类对象的情况，此时转换才有意义。 </p>
-<h4 id="reinpreter-cast"><a href="#reinpreter-cast" class="headerlink" title="reinpreter_cast"></a>reinpreter_cast</h4><p>用法：reinpreter_cast &lt; type-id &gt; (expression)</p>
-<p>type-id 必须是一个指针、引用、算术类型、函数指针或者成员指针。<strong>它可以转化任何内置的数据类型为其他任何的数据类型</strong>。从运算对象底层的位模式提供低层次上的重新解释，不建议使用，若使用必须对涉及的类型和编译器的转换过程都十分了解。</p>
-<h4 id="const-cast"><a href="#const-cast" class="headerlink" title="const_cast"></a>const_cast</h4><p>用法：const_cast &lt; type-id &gt; (expression)</p>
-<p>该运算符用来<strong>修改类型的 const 或 volatile 属性</strong>。</p>
-<p>volatile：用于 C/C++ 中，意在阻止编译器对其修饰对象进行任何形式的优化。常用于多线程，因为线程是异步运行的，每个线程导致的全局变量的每次更新，都应该被其他线程重新从内存中获取。为了消除编译器优化导致的效果，这些全局变量必须要用 <code>volatile</code> 修饰。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.nowcoder.com/discuss/640457?channel=-1&amp;source_id=profile_follow_post_nctrack" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/640457?channel=-1&amp;source_id=profile_follow_post_nctrack</a></p>
-<p><a href="https://blog.csdn.net/LoseInVain/article/details/103356324" target="_blank" rel="noopener">https://blog.csdn.net/LoseInVain/article/details/103356324</a></p>
-<p><a href="https://blog.csdn.net/daaikuaichuan/article/details/79476501" target="_blank" rel="noopener">https://blog.csdn.net/daaikuaichuan/article/details/79476501</a></p>
+<p>第二天早上十点钟，梦到自己在踢欧冠决赛的我被 HR 一个电话打起来面试主管面。</p>
 
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2022/05/29/15/" data-toggle="tooltip" data-placement="top" title="华为数通软件开发实习技术面">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2022/05/11/13/" data-toggle="tooltip" data-placement="top" title="浅析xv6操作系统进程相关源码">Next Post &rarr;</a>
+                        <a href="/2022/05/17/14/" data-toggle="tooltip" data-placement="top" title="C++复习笔记#1：static与类型转换">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -360,17 +427,6 @@
 
     
       
-        <aside id="sidebar">
-          <div id="toc" class="toc-article">
-          <strong class="toc-title">Contents</strong>
-          
-            
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#static-关键字"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">static 关键字</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#全局-static-变量"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">全局 static 变量</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#局部-static-变量"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">局部 static 变量</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#static-函数"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">static 函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#类的-static-成员变量-amp-static-成员函数"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">类的 static 成员变量 &amp; static 成员函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#static-的作用"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">static 的作用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#四种强制类型转换"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">四种强制类型转换</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#隐式类型转换"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">隐式类型转换</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#显式类型转换"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">显式类型转换</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#static-cast"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">static_cast</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#dynamic-cast"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">dynamic_cast</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#reinpreter-cast"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">reinpreter_cast</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#const-cast"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">const_cast</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Reference"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Reference</span></a></li></ol>
-            
-          
-          </div>
-        </aside>
-      
     
 
                 
@@ -387,7 +443,9 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Development" title="Development">Development</a>
+                          <a class="tag" href="/tags/#Life" title="Life">Life</a>
+                        
+                          <a class="tag" href="/tags/#Experience" title="Experience">Experience</a>
                         
                           <a class="tag" href="/tags/#C++" title="C++">C++</a>
                         
