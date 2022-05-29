@@ -359,7 +359,7 @@
 </li>
 <li><p><strong>好，来做道题：<a href="https://leetcode.cn/problems/group-anagrams/" target="_blank" rel="noopener">leetcode49</a></strong></p>
 <blockquote>
-<p>面试官需要共享屏幕并计时 30min。这道题其实不难，但是因为太简单了我就想着先做出来再说，就暴力了一个比较蠢的哈希遍历方法，时间复杂度 O(n <em> n </em> m)。面试官问我有没有更好的方法，我就说对每个字符串内部排序，然后比较字符串即可，复杂度为 O(n * mlogm)，面试官认可了。</p>
+<p>面试官需要共享屏幕并计时 30min。这道题其实不难，但是因为太紧张了，想了几分钟没想到好的办法，我就想着先做出来再说，就暴力了一个比较蠢的哈希遍历方法，时间复杂度 <code>O(nnm)</code>。面试官问我有没有更好的方法，我就说对每个字符串内部排序，然后比较字符串即可，复杂度为 <code>O(nmlogm)</code>，面试官认可了。</p>
 </blockquote>
 </li>
 <li><p><strong>反问：你们的技术栈是什么？</strong></p>
@@ -657,6 +657,21 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
