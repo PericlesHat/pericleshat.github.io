@@ -278,11 +278,8 @@
 <p>我：shared_ptr 是共享指针，我没有读过源码，但是我知道里面有个计数器会随着指向内存 +1，释放内存 -1。（unique_ptr 答错了，答到了 weak_ptr 的概念上）</p>
 </blockquote>
 <ul>
-<li><p><strong>shared_ptr</strong> ：shared_ptr 是一种共享式指针，它引入了一个引用计数的概念，对于一块内存，每增加一个 shared_ptr 指向，其引用计数+1，每有一个 shared_ptr 释放对内存的使用权，即销毁指针或指向其他内存，则引用计数-1，当引用计数为0时，则自动释放其之前指向的内存。</p>
-<ul>
+<li><strong>shared_ptr</strong> ：shared_ptr 是一种共享式指针，它引入了一个引用计数的概念，对于一块内存，每增加一个 shared_ptr 指向，其引用计数+1，每有一个 shared_ptr 释放对内存的使用权，即销毁指针或指向其他内存，则引用计数-1，当引用计数为0时，则自动释放其之前指向的内存。</li>
 <li><strong>unique_ptr</strong>： 为了保证同一时间仅能有一个指针来管理一块内存，C++11 引入了unique_ptr，它是一种独占式指针，仅支持一个指针指向该内存。可以使用 <code>std::move</code> 来移动 unique_ptr 指向的内存。</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><p><strong>你了解 std::move 吗？了解模板吗？lambda呢？（还问了几个名词，不懂）</strong></p>
@@ -660,21 +657,6 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
