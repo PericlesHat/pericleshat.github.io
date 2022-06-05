@@ -275,7 +275,7 @@ J &= \frac{1}{n}\sum_{i = 1}^n (f(x_i) - y_i)^2
 J = \frac{1}{n}\sum_{i = 1}^n (f(x_i) - y_i)^2 + \lambda \|w\|_2^2
 \tag{4}</script><p>So the main difference between the old cost function and the new one is, we introduce the penalty as λ × slope². <strong>When the sample size are relatively small, Ridge Regression can improve predictions made from new data by making the predictions less sensitive to the training data.</strong> Ridge regression is also referred to as <strong>L2 Regularization</strong>.</p>
 <h2 id="Lasso-Regression"><a href="#Lasso-Regression" class="headerlink" title="Lasso Regression"></a>Lasso Regression</h2><p>Lasso Regression is a regularization technique used in feature selection using a Shrinkage method also referred to as the <strong>penalized regression method</strong>, which is similar to Ridge Regression we mentioned before. Lasso is short for <strong>L</strong>east <strong>A</strong>bsolute <strong>S</strong>hrinkage and <strong>S</strong>election <strong>O</strong>perator, which is used both for regularization and model selection. If a model uses the <strong>L1 regularization</strong> technique, then it is called lasso regression.</p>
-<p><img src="https://i.bmp.ovh/imgs/2022/06/05/209ecd0c54c373da.png" alt=""></p>
+<p><img src="https://i.bmp.ovh/imgs/2022/06/05/209ecd0c54c373da.png" style="zoom:25%;" /></p>
 <p>The superficial difference between Lasso Regression and Ridge Regression is the penalty where instead of squaring the slope, we take the absolute value. The cost function of Lasso Regression is:</p>
 <script type="math/tex; mode=display">
 J = \frac{1}{n}\sum_{i = 1}^n (f(x_i) - y_i)^2 + \lambda \|w\|_1
