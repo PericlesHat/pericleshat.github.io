@@ -1,0 +1,21 @@
+/* Experience.module.css */
+.experience-line {
+    background-color: #D1D5DB;  
+    width: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+}
+
+.cover-dot {
+    background-color: #ffffff; 
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
