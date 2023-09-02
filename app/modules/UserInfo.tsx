@@ -169,7 +169,7 @@ const SocialsBlock = ({ socials }: { socials: typeof userInfo.data.socials }) =>
                             key={`userinfo_languages_${sIndex}`}
                             className="self-stretch justify-start items-center gap-1 inline-flex mb-4 last:mb-0"
                         >
-                            <div className="w-6 h-6 bg-slate-200 rounded-full relative dark:bg-slate-600 dark:bg-opacity-90">
+                            <div className="w-6 h-6  rounded-full relative dark:bg-slate-600 dark:bg-opacity-90">
                                 <div className="w-5 h-5 absolute left-[0.125rem] top-[0.125rem]">
                                     <FallbackImage src={`./commonicons/${social.toLowerCase()}.svg`} />
                                 </div>
