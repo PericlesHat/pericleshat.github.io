@@ -36,11 +36,11 @@ export default {
         //     name: 'excel',
         //     desc: 'Office Work',
         // },
-        // {
-        //     title: 'Blender',
-        //     name: 'blender',
-        //     desc: 'blender',
-        // },
+        {
+            title: '',
+            name: '',
+            desc: '',
+        },
     ],
     status: 0,
 }

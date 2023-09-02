@@ -9,9 +9,9 @@ export default {
         },
         contactInfo: {
             email: 'ziyang.zhang2@emory.edu',
-            // website: 'https://keyonc.top',
-            // phone: '13600000000',
-            // countryCode: '1',
+            website: '',
+            phone: '',
+            countryCode: '',
             city: 'Atlanta',
         },
         socials: [
@@ -62,7 +62,7 @@ export default {
             { language: 'Cantonese', level: 'Elementary' },
         ],
         hobbies: [
-            // { hobby: 'Gaming', type: 'game' },
+            // { hobby: '', type: '' },
             // { hobby: 'Travelling', type: 'travel' },
             // { hobby: 'Photography', type: 'photography' },
             // { hobby: 'Badminton', type: 'badminton' },

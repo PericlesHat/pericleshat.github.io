@@ -13,7 +13,7 @@ const Tools = () => {
         <div className="tools-module">
             <div className="p-4 w-full flex-col justify-start  items-start gap-4 inline-flex  min-w-[35rem]">
                 <div className="text-center text-slate-800 text-2xl font-medium leading-none tracking-tight dark:text-zinc-200">
-                    {title}
+                    {}
                 </div>
                 <div className="self-stretch justify-start items-start mt-2 flex-col gap-2 flex">
                     {_map(chunkedTools, (rowTools, rowIndex) => {

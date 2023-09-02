@@ -163,7 +163,7 @@ const SocialsBlock = ({ socials }: { socials: typeof userInfo.data.socials }) =>
                     Socials
                 </div>
                 {_map(socials, (sItem, sIndex) => {
-                    const { social, account, link, qrcode } = sItem || {}
+                    const { social, account, link } = sItem || {}
                     return (
                         <div
                             key={`userinfo_languages_${sIndex}`}
@@ -181,7 +181,7 @@ const SocialsBlock = ({ socials }: { socials: typeof userInfo.data.socials }) =>
                                 <div
                                     className={`self-stretch text-slate-600 text-xs font-medium leading-3 dark:text-gray-300`}
                                 >
-                                    {link || qrcode ? (
+                                    {link ? (
                                         <SocialInteractText text={account} socialItem={sItem} />
                                     ) : (
                                         <>{account}</>
@@ -250,9 +250,9 @@ const HobbiesInterestsBlock = ({ hobbies }: { hobbies: typeof userInfo.data.hobb
                             className="self-stretch justify-start items-center gap-1 inline-flex mb-4 last:mb-0"
                         >
                             <div className="w-5 h-5 relative">
-                                <div className="w-5 h-5 absolute ">
+                                {/* <div className="w-5 h-5 absolute ">
                                     <FallbackImage src={`./commonicons/${type.toLowerCase()}.svg`} />
-                                </div>
+                                </div> */}
                             </div>
                             <div className="ml-[0.2rem] grow shrink basis-0 flex-col justify-start items-start">
                                 <div className="self-stretch text-slate-600 text-xs font-medium leading-3 relative top-[1px] dark:text-gray-300">
