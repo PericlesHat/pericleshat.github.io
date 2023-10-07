@@ -10,7 +10,7 @@ export default {
             jobTitle: 'Research Assistant',
             city: 'Atlanta', // City of employment
             Responsibilities:
-                '• Affiliated with Emory Graph Mining Lab, under the supervision of Prof. Carl Yang', // Job description/Responsibilities
+                '• Affiliated with Emory Graph Mining Lab, under the supervision of Prof. Carl Yang<br />• Working on graph data mining and EHR related learning', // Job description/Responsibilities
         },
         {
             logo: './commonicons/szu.svg', // company logo
