@@ -10,7 +10,7 @@ export default {
             jobTitle: 'Research Assistant',
             city: 'Atlanta', // City of employment
             Responsibilities:
-                '• Affiliated with Emory Graph Mining Lab, under the supervision of Prof. Carl Yang<br />• Working on graph data mining and EHR related learning', // Job description/Responsibilities
+                '• Affiliated with Emory Graph Mining Lab, Department of Computer Science at Emory University, under the supervision of Prof. Carl Yang<br />• Working on graph data mining and EHR related learning', // Job description/Responsibilities
         },
         {
             logo: './commonicons/szu.svg', // company logo
@@ -21,7 +21,7 @@ export default {
             jobTitle: 'Research Assistant',
             city: 'Shenzhen', // City of employment
             Responsibilities:
-                '• Affiliated with Immersive Media Lab, Research Institute for Future Media Computing, under the supervision of Prof. Xu Wang<br />• Worked on multimodal learning models, 3D scene understanding and its downstream tasks (e.g., Visual Question Answering)', // Job description/Responsibilities
+                '• Affiliated with Immersive Media Lab, Research Institute for Future Media Computing at Shenzhen University, under the supervision of Prof. Xu Wang<br />• Worked on multimodal learning models, 3D scene understanding and its downstream tasks (e.g., Visual Question Answering)', // Job description/Responsibilities
         },
         {
             logo: './commonicons/Sheffield.svg', // company logo
@@ -32,7 +32,7 @@ export default {
             jobTitle: 'Research Assistant',
             city: 'Shenzhen', // City of employment
             Responsibilities:
-                '• Affiliated with Intelligent Computational Engineering Lab X, under the supervision of Prof. Wei W. Xing<br /> • Worked on Bayesian methods for real-world engineering problems (e.g., predicting Li-ion battery degradation, multi-fidelity fusion)', // Job description/Responsibilities
+                '• Affiliated with Intelligent Computational Engineering Lab X, The University of Sheffield, under the supervision of Prof. Wei W. Xing<br /> • Worked on Bayesian methods for real-world engineering problems (e.g., predicting Li-ion battery degradation, multi-fidelity fusion)', // Job description/Responsibilities
         },
         {
             logo: './commonicons/bluewhalex.png', // company logo
