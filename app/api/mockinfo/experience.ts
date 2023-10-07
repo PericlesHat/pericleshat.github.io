@@ -2,9 +2,20 @@ export default {
     title: 'Experience',
     data: [
         {
-            logo: './commonicons/szu.svg', // company logo
-            hireDate: 'Sep 2022', // Date of hire
+            logo: './school/Emory.png', // company logo
+            hireDate: 'Oct 2023', // Date of hire
             lastDay: 'Present', // Last day of work
+            companyFullname: 'Emory University', // Full name of the company
+            companyAbb: 'EGM, Emory', // Abbreviation of the company name
+            jobTitle: 'Research Assistant',
+            city: 'Atlanta', // City of employment
+            Responsibilities:
+                '• Affiliated with Emory Graph Mining Lab, under the supervision of Prof. Carl Yang', // Job description/Responsibilities
+        },
+        {
+            logo: './commonicons/szu.svg', // company logo
+            hireDate: 'Dec 2022', // Date of hire
+            lastDay: 'Sep 2023', // Last day of work
             companyFullname: 'Shenzhen University', // Full name of the company
             companyAbb: 'IML, SZU', // Abbreviation of the company name
             jobTitle: 'Research Assistant',
