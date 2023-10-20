@@ -2,6 +2,13 @@ export default {
     title: 'Works',
     data: [
         {
+            banner: './misc/grace.png',
+            title: 'Reproduction of GRACE',
+            descriptions:
+                'Unofficial PyTorch implementation of Graph Clustering with Embedding Propagation.',
+            link: 'https://github.com/PericlesHat/GRACE-pytorch',
+        },
+        {
             banner: './misc/egpdm.png',
             title: 'Enhanced Gaussian Process Dynamical Models',
             descriptions:
